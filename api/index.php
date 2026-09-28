@@ -21,8 +21,14 @@ foreach ([
     }
 }
 
-// Env override (dipaksa lewat putenv + $_ENV + $_SERVER)
+// Paksa HTTPS supaya URL aset tidak diblokir (mixed content)
+$_SERVER['HTTPS'] = 'on';
+$_SERVER['SERVER_PORT'] = 443;
+$host = 'https://' . ($_SERVER['HTTP_HOST'] ?? 'localhost');
+
 $env = [
+    'APP_URL'            => $host,
+    'ASSET_URL'          => $host,
     'DB_CONNECTION'      => 'sqlite',
     'DB_DATABASE'        => $dst,
     'VIEW_COMPILED_PATH' => '/tmp/storage/framework/views',
@@ -31,6 +37,11 @@ $env = [
     'SESSION_DRIVER'     => 'cookie',
     'LOG_CHANNEL'        => 'stderr',
     'APP_STORAGE'        => '/tmp/storage',
+    'APP_SERVICES_CACHE' => '/tmp/bootstrap/cache/services.php',
+    'APP_PACKAGES_CACHE' => '/tmp/bootstrap/cache/packages.php',
+    'APP_CONFIG_CACHE'   => '/tmp/bootstrap/cache/config.php',
+    'APP_ROUTES_CACHE'   => '/tmp/bootstrap/cache/routes.php',
+    'APP_EVENTS_CACHE'   => '/tmp/bootstrap/cache/events.php',
 ];
 foreach ($env as $k => $v) {
     putenv("$k=$v");
@@ -38,15 +49,4 @@ foreach ($env as $k => $v) {
     $_SERVER[$k] = $v;
 }
 
-ini_set('display_errors', '1');
-error_reporting(E_ALL);
-
-try {
-    require __DIR__ . '/../public/index.php';
-} catch (\Throwable $e) {
-    http_response_code(500);
-    header('Content-Type: text/plain');
-    echo get_class($e) . ": " . $e->getMessage() . "\n";
-    echo $e->getFile() . ':' . $e->getLine() . "\n\n";
-    echo $e->getTraceAsString();
-}
+require __DIR__ . '/../public/index.php';
