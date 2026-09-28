@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Experience extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'role',
+        'company',
+        'period',
+        'location',
+        'type',
+        'description',
+        'highlights',
+        'image',
+        'badge',
+        'order',
+    ];
+
+    protected $casts = [
+        'highlights' => 'array',
+    ];
+}
