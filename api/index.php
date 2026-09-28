@@ -7,18 +7,19 @@ error_reporting(E_ALL);
 putenv('VERCEL=1');
 $_ENV['VERCEL'] = '1';
 
-$storagePath = '/tmp/storage';
 $dirs = [
-    $storagePath,
-    $storagePath . '/logs',
-    $storagePath . '/framework',
-    $storagePath . '/framework/cache',
-    $storagePath . '/framework/cache/data',
-    $storagePath . '/framework/sessions',
-    $storagePath . '/framework/testing',
-    $storagePath . '/framework/views',
-    $storagePath . '/app',
-    $storagePath . '/app/public',
+    '/tmp/storage',
+    '/tmp/storage/logs',
+    '/tmp/storage/framework',
+    '/tmp/storage/framework/cache',
+    '/tmp/storage/framework/cache/data',
+    '/tmp/storage/framework/sessions',
+    '/tmp/storage/framework/testing',
+    '/tmp/storage/framework/views',
+    '/tmp/storage/app',
+    '/tmp/storage/app/public',
+    '/tmp/bootstrap',
+    '/tmp/bootstrap/cache',
 ];
 
 foreach ($dirs as $dir) {
