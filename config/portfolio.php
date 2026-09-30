@@ -20,7 +20,7 @@ return [
     'about' => [
         'heading' => 'Fokus pada Desain yang Intuitif dan Frontend yang Responsif',
         'p1' => 'Halo! Saya Muhammad Al Hafizh Siregar, mahasiswa semester 7 program studi S1 Teknologi Informasi di Universitas Negeri Yogyakarta. Saya memiliki ketertarikan mendalam pada perancangan desain antarmuka pengguna (UI/UX) menggunakan Figma serta pengembangan web di sisi Frontend untuk menciptakan tampilan visual yang menarik, responsif, dan ramah pengguna.',
-        'p2' => 'Selama perkuliahan hingga semester 7 ini, saya terbiasa merancang wireframe, mockup visual, hingga prototype interaktif di Figma, lalu menerjemahkannya ke dalam kode antarmuka web yang rapi dan responsif menggunakan HTML5, CSS3, Tailwind CSS, dan JavaScript (didukung pemahaman integrasi web dengan Laravel). Memasuki masa magang, saya siap memberikan dedikasi dan kreativitas terbaik untuk tim Anda.',
+        'p2' => 'Selama perkuliahan hingga semester 7 ini, saya belajar merancang wireframe, mockup visual, hingga prototype interaktif di Figma, lalu menerjemahkannya ke dalam kode antarmuka web yang rapi dan responsif menggunakan HTML5, CSS3, Tailwind CSS, dan JavaScript (didukung pemahaman integrasi web dengan Laravel). Memasuki masa magang, saya siap memberikan dedikasi dan kreativitas terbaik untuk tim Anda.',
         'education_degree' => 'S1 Teknologi Informasi',
         'education_campus' => 'Universitas Negeri Yogyakarta (UNY)',
         'semester' => 'Semester 7',
